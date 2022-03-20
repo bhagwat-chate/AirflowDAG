@@ -1,0 +1,25 @@
+[2022-03-20 13:12:20,955] {taskinstance.py:876} INFO - Dependencies all met for <TaskInstance: user_processing.extracting_user 2022-02-25T00:00:00+00:00 [queued]>
+[2022-03-20 13:12:20,974] {taskinstance.py:876} INFO - Dependencies all met for <TaskInstance: user_processing.extracting_user 2022-02-25T00:00:00+00:00 [queued]>
+[2022-03-20 13:12:20,974] {taskinstance.py:1067} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-20 13:12:20,974] {taskinstance.py:1068} INFO - Starting attempt 1 of 1
+[2022-03-20 13:12:20,975] {taskinstance.py:1069} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-20 13:12:21,012] {taskinstance.py:1087} INFO - Executing <Task(SimpleHttpOperator): extracting_user> on 2022-02-25T00:00:00+00:00
+[2022-03-20 13:12:21,017] {standard_task_runner.py:52} INFO - Started process 76732 to run task
+[2022-03-20 13:12:21,036] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'user_processing', 'extracting_user', '2022-02-25T00:00:00+00:00', '--job-id', '674', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/user_processing.py', '--cfg-path', '/tmp/tmp87uqiy71', '--error-file', '/tmp/tmpzi_4i0wh']
+[2022-03-20 13:12:21,037] {standard_task_runner.py:77} INFO - Job 674: Subtask extracting_user
+[2022-03-20 13:12:21,166] {logging_mixin.py:104} INFO - Running <TaskInstance: user_processing.extracting_user 2022-02-25T00:00:00+00:00 [running]> on host airflowvm
+[2022-03-20 13:12:21,415] {taskinstance.py:1280} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=user_processing
+AIRFLOW_CTX_TASK_ID=extracting_user
+AIRFLOW_CTX_EXECUTION_DATE=2022-02-25T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-02-25T00:00:00+00:00
+[2022-03-20 13:12:21,416] {http.py:111} INFO - Calling HTTP method
+[2022-03-20 13:12:21,466] {base.py:69} INFO - Using connection to: id: user_api. Host: https://randomuser.me/, Port: None, Schema: , Login: , Password: ***, extra: {}
+[2022-03-20 13:12:21,473] {http.py:140} INFO - Sending 'GET' to url: https://randomuser.me/api/
+[2022-03-20 13:12:22,075] {http.py:115} INFO - {"results":[{"gender":"female","name":{"title":"Ms","first":"Evelyn","last":"Zhang"},"location":{"street":{"number":4299,"name":"Roscommon Road"},"city":"Whangarei","state":"Wellington","country":"New Zealand","postcode":99355,"coordinates":{"latitude":"68.7555","longitude":"26.0867"},"timezone":{"offset":"+7:00","description":"Bangkok, Hanoi, Jakarta"}},"email":"evelyn.zhang@example.com","login":{"uuid":"4ffc6cfe-f4eb-4a7e-b387-6556c3310851","username":"heavygorilla436","password":"kiss","salt":"r6RND4Cm","md5":"ee9c4c24a241f7c929aaa8f62de211b5","sha1":"dc6aabc36b24eb929fdd0df0f40ccdc0f36df598","sha256":"71338f88af15b18e9b89bd4e966a6f89f9a3332a0fa26da1cb58fc8442cfde79"},"dob":{"date":"1963-06-03T03:05:26.871Z","age":59},"registered":{"date":"2009-10-15T08:25:11.615Z","age":13},"phone":"(121)-053-1232","cell":"(128)-258-5827","id":{"name":"","value":null},"picture":{"large":"https://randomuser.me/api/portraits/women/74.jpg","medium":"https://randomuser.me/api/portraits/med/women/74.jpg","thumbnail":"https://randomuser.me/api/portraits/thumb/women/74.jpg"},"nat":"NZ"}],"info":{"seed":"f5dd6ec1dacfdc8e","results":1,"page":1,"version":"1.3"}}
+[2022-03-20 13:12:22,481] {taskinstance.py:1184} INFO - Marking task as SUCCESS. dag_id=user_processing, task_id=extracting_user, execution_date=20220225T000000, start_date=20220320T131220, end_date=20220320T131222
+[2022-03-20 13:12:22,575] {taskinstance.py:1245} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2022-03-20 13:12:22,604] {local_task_job.py:151} INFO - Task exited with return code 0

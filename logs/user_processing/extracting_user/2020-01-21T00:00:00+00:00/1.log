@@ -1,0 +1,25 @@
+[2022-03-20 12:00:08,484] {taskinstance.py:876} INFO - Dependencies all met for <TaskInstance: user_processing.extracting_user 2020-01-21T00:00:00+00:00 [queued]>
+[2022-03-20 12:00:08,500] {taskinstance.py:876} INFO - Dependencies all met for <TaskInstance: user_processing.extracting_user 2020-01-21T00:00:00+00:00 [queued]>
+[2022-03-20 12:00:08,500] {taskinstance.py:1067} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-20 12:00:08,501] {taskinstance.py:1068} INFO - Starting attempt 1 of 1
+[2022-03-20 12:00:08,501] {taskinstance.py:1069} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-20 12:00:08,539] {taskinstance.py:1087} INFO - Executing <Task(SimpleHttpOperator): extracting_user> on 2020-01-21T00:00:00+00:00
+[2022-03-20 12:00:08,544] {standard_task_runner.py:52} INFO - Started process 34185 to run task
+[2022-03-20 12:00:08,559] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'user_processing', 'extracting_user', '2020-01-21T00:00:00+00:00', '--job-id', '144', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/user_processing.py', '--cfg-path', '/tmp/tmpr933309g', '--error-file', '/tmp/tmp9d8a_ejm']
+[2022-03-20 12:00:08,563] {standard_task_runner.py:77} INFO - Job 144: Subtask extracting_user
+[2022-03-20 12:00:08,684] {logging_mixin.py:104} INFO - Running <TaskInstance: user_processing.extracting_user 2020-01-21T00:00:00+00:00 [running]> on host airflowvm
+[2022-03-20 12:00:08,832] {taskinstance.py:1280} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=user_processing
+AIRFLOW_CTX_TASK_ID=extracting_user
+AIRFLOW_CTX_EXECUTION_DATE=2020-01-21T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2020-01-21T00:00:00+00:00
+[2022-03-20 12:00:08,833] {http.py:111} INFO - Calling HTTP method
+[2022-03-20 12:00:08,842] {base.py:69} INFO - Using connection to: id: user_api. Host: https://randomuser.me/, Port: None, Schema: , Login: , Password: ***, extra: {}
+[2022-03-20 12:00:08,846] {http.py:140} INFO - Sending 'GET' to url: https://randomuser.me/api/
+[2022-03-20 12:00:09,362] {http.py:115} INFO - {"results":[{"gender":"male","name":{"title":"Mr","first":"Pacal","last":"Novaes"},"location":{"street":{"number":6918,"name":"Rua Quatro"},"city":"Lauro de Freitas","state":"Bahia","country":"Brazil","postcode":28762,"coordinates":{"latitude":"-70.9677","longitude":"-141.4559"},"timezone":{"offset":"+4:00","description":"Abu Dhabi, Muscat, Baku, Tbilisi"}},"email":"pacal.novaes@example.com","login":{"uuid":"cb9b9723-cd56-45ae-bd3b-40c0e50d9dc3","username":"bluepanda362","password":"sundevil","salt":"X3uzuQ4S","md5":"6a904dfb539d86c99a9bfd9a09979bfd","sha1":"5636c74a6cf4436f606a53e7c0b4faccfb5c5b61","sha256":"a3e097da32e5cbdbc009f142c70dc1fbce3a8806d624927d605c82f234a6d7e5"},"dob":{"date":"1946-03-01T01:42:17.572Z","age":76},"registered":{"date":"2016-05-31T01:20:43.322Z","age":6},"phone":"(83) 0858-8233","cell":"(99) 5194-9217","id":{"name":"","value":null},"picture":{"large":"https://randomuser.me/api/portraits/men/1.jpg","medium":"https://randomuser.me/api/portraits/med/men/1.jpg","thumbnail":"https://randomuser.me/api/portraits/thumb/men/1.jpg"},"nat":"BR"}],"info":{"seed":"f28ea70ad68d4f2c","results":1,"page":1,"version":"1.3"}}
+[2022-03-20 12:00:09,452] {taskinstance.py:1184} INFO - Marking task as SUCCESS. dag_id=user_processing, task_id=extracting_user, execution_date=20200121T000000, start_date=20220320T120008, end_date=20220320T120009
+[2022-03-20 12:00:09,522] {taskinstance.py:1245} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2022-03-20 12:00:09,570] {local_task_job.py:151} INFO - Task exited with return code 0

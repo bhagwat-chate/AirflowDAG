@@ -1,0 +1,25 @@
+[2022-03-20 13:22:02,547] {taskinstance.py:876} INFO - Dependencies all met for <TaskInstance: user_processing.extracting_user 2022-03-16T00:00:00+00:00 [queued]>
+[2022-03-20 13:22:02,583] {taskinstance.py:876} INFO - Dependencies all met for <TaskInstance: user_processing.extracting_user 2022-03-16T00:00:00+00:00 [queued]>
+[2022-03-20 13:22:02,584] {taskinstance.py:1067} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-20 13:22:02,584] {taskinstance.py:1068} INFO - Starting attempt 1 of 1
+[2022-03-20 13:22:02,584] {taskinstance.py:1069} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-20 13:22:02,634] {taskinstance.py:1087} INFO - Executing <Task(SimpleHttpOperator): extracting_user> on 2022-03-16T00:00:00+00:00
+[2022-03-20 13:22:02,641] {standard_task_runner.py:52} INFO - Started process 84474 to run task
+[2022-03-20 13:22:02,664] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'user_processing', 'extracting_user', '2022-03-16T00:00:00+00:00', '--job-id', '769', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/user_processing.py', '--cfg-path', '/tmp/tmp_jjyezkk', '--error-file', '/tmp/tmpkhrfx2av']
+[2022-03-20 13:22:02,665] {standard_task_runner.py:77} INFO - Job 769: Subtask extracting_user
+[2022-03-20 13:22:02,810] {logging_mixin.py:104} INFO - Running <TaskInstance: user_processing.extracting_user 2022-03-16T00:00:00+00:00 [running]> on host airflowvm
+[2022-03-20 13:22:03,040] {taskinstance.py:1280} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=user_processing
+AIRFLOW_CTX_TASK_ID=extracting_user
+AIRFLOW_CTX_EXECUTION_DATE=2022-03-16T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-03-16T00:00:00+00:00
+[2022-03-20 13:22:03,042] {http.py:111} INFO - Calling HTTP method
+[2022-03-20 13:22:03,056] {base.py:69} INFO - Using connection to: id: user_api. Host: https://randomuser.me/, Port: None, Schema: , Login: , Password: ***, extra: {}
+[2022-03-20 13:22:03,062] {http.py:140} INFO - Sending 'GET' to url: https://randomuser.me/api/
+[2022-03-20 13:22:03,509] {http.py:115} INFO - {"results":[{"gender":"male","name":{"title":"Mr","first":"Bradley","last":"Davidson"},"location":{"street":{"number":5631,"name":"Ranchview Dr"},"city":"Moreno Valley","state":"Alaska","country":"United States","postcode":74463,"coordinates":{"latitude":"82.1171","longitude":"-24.7286"},"timezone":{"offset":"-2:00","description":"Mid-Atlantic"}},"email":"bradley.davidson@example.com","login":{"uuid":"1369a90b-7b43-4e9c-a20c-85daf1c3f088","username":"beautifulpeacock593","password":"beetle","salt":"EUpm6MVx","md5":"0e2dc8bd0b513c902f45073e4f1b11d1","sha1":"76a6274ebcf81feff3b962ee64d1944071190564","sha256":"04ffc40d8bafadc4ef0fed09a7d8b5b2940b237c32fffa53e7a64e240872edd5"},"dob":{"date":"1963-07-29T16:56:24.414Z","age":59},"registered":{"date":"2017-03-25T00:03:38.592Z","age":5},"phone":"(908)-290-5512","cell":"(442)-828-2789","id":{"name":"SSN","value":"450-82-3621"},"picture":{"large":"https://randomuser.me/api/portraits/men/64.jpg","medium":"https://randomuser.me/api/portraits/med/men/64.jpg","thumbnail":"https://randomuser.me/api/portraits/thumb/men/64.jpg"},"nat":"US"}],"info":{"seed":"f6110bbd6ecd6aa9","results":1,"page":1,"version":"1.3"}}
+[2022-03-20 13:22:03,584] {taskinstance.py:1184} INFO - Marking task as SUCCESS. dag_id=user_processing, task_id=extracting_user, execution_date=20220316T000000, start_date=20220320T132202, end_date=20220320T132203
+[2022-03-20 13:22:03,692] {taskinstance.py:1245} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2022-03-20 13:22:03,704] {local_task_job.py:151} INFO - Task exited with return code 0

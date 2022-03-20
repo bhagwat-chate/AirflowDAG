@@ -1,0 +1,26 @@
+[2022-03-20 13:22:41,378] {taskinstance.py:876} INFO - Dependencies all met for <TaskInstance: user_processing.storing_user 2022-03-15T00:00:00+00:00 [queued]>
+[2022-03-20 13:22:41,443] {taskinstance.py:876} INFO - Dependencies all met for <TaskInstance: user_processing.storing_user 2022-03-15T00:00:00+00:00 [queued]>
+[2022-03-20 13:22:41,461] {taskinstance.py:1067} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-20 13:22:41,462] {taskinstance.py:1068} INFO - Starting attempt 1 of 1
+[2022-03-20 13:22:41,462] {taskinstance.py:1069} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-20 13:22:41,586] {taskinstance.py:1087} INFO - Executing <Task(BashOperator): storing_user> on 2022-03-15T00:00:00+00:00
+[2022-03-20 13:22:41,600] {standard_task_runner.py:52} INFO - Started process 84960 to run task
+[2022-03-20 13:22:41,616] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'user_processing', 'storing_user', '2022-03-15T00:00:00+00:00', '--job-id', '775', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/user_processing.py', '--cfg-path', '/tmp/tmpltrl8cn3', '--error-file', '/tmp/tmp_dwf4b7o']
+[2022-03-20 13:22:41,624] {standard_task_runner.py:77} INFO - Job 775: Subtask storing_user
+[2022-03-20 13:22:41,780] {logging_mixin.py:104} INFO - Running <TaskInstance: user_processing.storing_user 2022-03-15T00:00:00+00:00 [running]> on host airflowvm
+[2022-03-20 13:22:41,954] {taskinstance.py:1280} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=user_processing
+AIRFLOW_CTX_TASK_ID=storing_user
+AIRFLOW_CTX_EXECUTION_DATE=2022-03-15T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-03-15T00:00:00+00:00
+[2022-03-20 13:22:41,956] {subprocess.py:52} INFO - Tmp dir root location: 
+ /tmp
+[2022-03-20 13:22:41,957] {subprocess.py:63} INFO - Running command: ['bash', '-c', 'echo -e ".separator ","\n. import /tmp/processed_user.csv users" | sqlite3 /home/airflow/airflow/airflow.db']
+[2022-03-20 13:22:41,970] {subprocess.py:75} INFO - Output:
+[2022-03-20 13:22:42,005] {subprocess.py:83} INFO - Command exited with return code 0
+[2022-03-20 13:22:42,073] {taskinstance.py:1184} INFO - Marking task as SUCCESS. dag_id=user_processing, task_id=storing_user, execution_date=20220315T000000, start_date=20220320T132241, end_date=20220320T132242
+[2022-03-20 13:22:42,125] {taskinstance.py:1245} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2022-03-20 13:22:42,176] {local_task_job.py:151} INFO - Task exited with return code 0

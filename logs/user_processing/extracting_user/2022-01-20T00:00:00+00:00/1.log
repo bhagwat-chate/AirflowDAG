@@ -1,0 +1,25 @@
+[2022-03-20 12:54:14,303] {taskinstance.py:876} INFO - Dependencies all met for <TaskInstance: user_processing.extracting_user 2022-01-20T00:00:00+00:00 [queued]>
+[2022-03-20 12:54:14,320] {taskinstance.py:876} INFO - Dependencies all met for <TaskInstance: user_processing.extracting_user 2022-01-20T00:00:00+00:00 [queued]>
+[2022-03-20 12:54:14,320] {taskinstance.py:1067} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-20 12:54:14,321] {taskinstance.py:1068} INFO - Starting attempt 1 of 1
+[2022-03-20 12:54:14,321] {taskinstance.py:1069} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-20 12:54:14,358] {taskinstance.py:1087} INFO - Executing <Task(SimpleHttpOperator): extracting_user> on 2022-01-20T00:00:00+00:00
+[2022-03-20 12:54:14,362] {standard_task_runner.py:52} INFO - Started process 66501 to run task
+[2022-03-20 12:54:14,379] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'user_processing', 'extracting_user', '2022-01-20T00:00:00+00:00', '--job-id', '494', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/user_processing.py', '--cfg-path', '/tmp/tmpqkzzscfi', '--error-file', '/tmp/tmpgrz4pjnx']
+[2022-03-20 12:54:14,380] {standard_task_runner.py:77} INFO - Job 494: Subtask extracting_user
+[2022-03-20 12:54:14,502] {logging_mixin.py:104} INFO - Running <TaskInstance: user_processing.extracting_user 2022-01-20T00:00:00+00:00 [running]> on host airflowvm
+[2022-03-20 12:54:14,989] {taskinstance.py:1280} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=user_processing
+AIRFLOW_CTX_TASK_ID=extracting_user
+AIRFLOW_CTX_EXECUTION_DATE=2022-01-20T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-01-20T00:00:00+00:00
+[2022-03-20 12:54:14,991] {http.py:111} INFO - Calling HTTP method
+[2022-03-20 12:54:15,001] {base.py:69} INFO - Using connection to: id: user_api. Host: https://randomuser.me/, Port: None, Schema: , Login: , Password: ***, extra: {}
+[2022-03-20 12:54:15,005] {http.py:140} INFO - Sending 'GET' to url: https://randomuser.me/api/
+[2022-03-20 12:54:15,548] {http.py:115} INFO - {"results":[{"gender":"female","name":{"title":"Mrs","first":"Aliciane","last":"Pires"},"location":{"street":{"number":3978,"name":"Rua Vinte E Quatro de Outubro"},"city":"Vitória de Santo Antão","state":"Amazonas","country":"Brazil","postcode":15856,"coordinates":{"latitude":"-71.7543","longitude":"82.1231"},"timezone":{"offset":"+4:00","description":"Abu Dhabi, Muscat, Baku, Tbilisi"}},"email":"aliciane.pires@example.com","login":{"uuid":"0c696ff1-1f17-4d58-89b2-482b69a2b372","username":"blackfish570","password":"r2d2","salt":"7gD1vGcL","md5":"5fc7168fe56741e1f6da06f2d8985c7c","sha1":"3c99cc127754610027f18178586e3d61c834aa4d","sha256":"f37c1bda9b83ab083e7386a5729edbec4db3f6d5008b1cebeb3330d8025928d9"},"dob":{"date":"1951-07-07T08:49:03.355Z","age":71},"registered":{"date":"2014-10-14T06:45:15.367Z","age":8},"phone":"(56) 1714-1712","cell":"(87) 3814-7899","id":{"name":"","value":null},"picture":{"large":"https://randomuser.me/api/portraits/women/39.jpg","medium":"https://randomuser.me/api/portraits/med/women/39.jpg","thumbnail":"https://randomuser.me/api/portraits/thumb/women/39.jpg"},"nat":"BR"}],"info":{"seed":"f25cfb9626226da4","results":1,"page":1,"version":"1.3"}}
+[2022-03-20 12:54:15,666] {taskinstance.py:1184} INFO - Marking task as SUCCESS. dag_id=user_processing, task_id=extracting_user, execution_date=20220120T000000, start_date=20220320T125414, end_date=20220320T125415
+[2022-03-20 12:54:16,576] {taskinstance.py:1245} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2022-03-20 12:54:16,593] {local_task_job.py:151} INFO - Task exited with return code 0

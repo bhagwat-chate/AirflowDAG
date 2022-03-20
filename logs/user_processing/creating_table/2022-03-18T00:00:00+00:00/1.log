@@ -1,0 +1,49 @@
+[2022-03-19 19:14:19,272] {taskinstance.py:876} INFO - Dependencies all met for <TaskInstance: user_processing.creating_table 2022-03-18T00:00:00+00:00 [queued]>
+[2022-03-19 19:14:19,290] {taskinstance.py:876} INFO - Dependencies all met for <TaskInstance: user_processing.creating_table 2022-03-18T00:00:00+00:00 [queued]>
+[2022-03-19 19:14:19,290] {taskinstance.py:1067} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-19 19:14:19,290] {taskinstance.py:1068} INFO - Starting attempt 1 of 1
+[2022-03-19 19:14:19,291] {taskinstance.py:1069} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-19 19:14:19,375] {taskinstance.py:1087} INFO - Executing <Task(SqliteOperator): creating_table> on 2022-03-18T00:00:00+00:00
+[2022-03-19 19:14:19,379] {standard_task_runner.py:52} INFO - Started process 9407 to run task
+[2022-03-19 19:14:19,395] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'user_processing', 'creating_table', '2022-03-18T00:00:00+00:00', '--job-id', '2', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/user_processing.py', '--cfg-path', '/tmp/tmpakhy8adc', '--error-file', '/tmp/tmphcxujpoa']
+[2022-03-19 19:14:19,397] {standard_task_runner.py:77} INFO - Job 2: Subtask creating_table
+[2022-03-19 19:14:19,646] {logging_mixin.py:104} INFO - Running <TaskInstance: user_processing.creating_table 2022-03-18T00:00:00+00:00 [running]> on host airflowvm
+[2022-03-19 19:14:19,801] {taskinstance.py:1280} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=user_processing
+AIRFLOW_CTX_TASK_ID=creating_table
+AIRFLOW_CTX_EXECUTION_DATE=2022-03-18T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-03-18T00:00:00+00:00
+[2022-03-19 19:14:19,801] {sqlite.py:63} INFO - Executing: 
+                CREATE TABLE users(
+                    firstname text not null,
+                    lastname TEXT NOT NULL,
+                    country TEXT NOT NULL,
+                    username TEXT NOT NULL,
+                    password TEXT NOT NULL,
+                    email TEXT NOT NULL PRIMARY KEY
+                );
+            
+[2022-03-19 19:14:19,818] {taskinstance.py:1481} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/sandbox/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1137, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/home/airflow/sandbox/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1311, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/home/airflow/sandbox/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1341, in _execute_task
+    result = task_copy.execute(context=context)
+  File "/home/airflow/sandbox/lib/python3.8/site-packages/airflow/providers/sqlite/operators/sqlite.py", line 65, in execute
+    hook.run(self.sql, parameters=self.parameters)
+  File "/home/airflow/sandbox/lib/python3.8/site-packages/airflow/hooks/dbapi.py", line 177, in run
+    with closing(self.get_conn()) as conn:
+  File "/home/airflow/sandbox/lib/python3.8/site-packages/airflow/providers/sqlite/hooks/sqlite.py", line 35, in get_conn
+    airflow_conn = self.get_connection(conn_id)
+  File "/home/airflow/sandbox/lib/python3.8/site-packages/airflow/hooks/base.py", line 67, in get_connection
+    conn = Connection.get_connection_from_secrets(conn_id)
+  File "/home/airflow/sandbox/lib/python3.8/site-packages/airflow/models/connection.py", line 379, in get_connection_from_secrets
+    raise AirflowNotFoundException(f"The conn_id `{conn_id}` isn't defined")
+airflow.exceptions.AirflowNotFoundException: The conn_id `db_sqlite` isn't defined
+[2022-03-19 19:14:19,829] {taskinstance.py:1524} INFO - Marking task as FAILED. dag_id=user_processing, task_id=creating_table, execution_date=20220318T000000, start_date=20220319T191419, end_date=20220319T191419
+[2022-03-19 19:14:19,905] {local_task_job.py:151} INFO - Task exited with return code 1

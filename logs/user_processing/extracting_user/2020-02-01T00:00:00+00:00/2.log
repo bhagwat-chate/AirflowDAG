@@ -1,0 +1,25 @@
+[2022-03-20 14:12:10,672] {taskinstance.py:876} INFO - Dependencies all met for <TaskInstance: user_processing.extracting_user 2020-02-01T00:00:00+00:00 [queued]>
+[2022-03-20 14:12:10,706] {taskinstance.py:876} INFO - Dependencies all met for <TaskInstance: user_processing.extracting_user 2020-02-01T00:00:00+00:00 [queued]>
+[2022-03-20 14:12:10,706] {taskinstance.py:1067} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-20 14:12:10,707] {taskinstance.py:1068} INFO - Starting attempt 2 of 2
+[2022-03-20 14:12:10,707] {taskinstance.py:1069} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-20 14:12:10,753] {taskinstance.py:1087} INFO - Executing <Task(SimpleHttpOperator): extracting_user> on 2020-02-01T00:00:00+00:00
+[2022-03-20 14:12:10,758] {standard_task_runner.py:52} INFO - Started process 103502 to run task
+[2022-03-20 14:12:10,779] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'user_processing', 'extracting_user', '2020-02-01T00:00:00+00:00', '--job-id', '985', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/user_processing.py', '--cfg-path', '/tmp/tmpybjplsfy', '--error-file', '/tmp/tmpmqlx5usr']
+[2022-03-20 14:12:10,781] {standard_task_runner.py:77} INFO - Job 985: Subtask extracting_user
+[2022-03-20 14:12:10,922] {logging_mixin.py:104} INFO - Running <TaskInstance: user_processing.extracting_user 2020-02-01T00:00:00+00:00 [running]> on host airflowvm
+[2022-03-20 14:12:11,145] {taskinstance.py:1280} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=user_processing
+AIRFLOW_CTX_TASK_ID=extracting_user
+AIRFLOW_CTX_EXECUTION_DATE=2020-02-01T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2020-02-01T00:00:00+00:00
+[2022-03-20 14:12:11,146] {http.py:111} INFO - Calling HTTP method
+[2022-03-20 14:12:11,168] {base.py:69} INFO - Using connection to: id: user_api. Host: https://randomuser.me/, Port: None, Schema: , Login: , Password: ***, extra: {}
+[2022-03-20 14:12:11,178] {http.py:140} INFO - Sending 'GET' to url: https://randomuser.me/api/
+[2022-03-20 14:12:11,723] {http.py:115} INFO - {"results":[{"gender":"male","name":{"title":"Mr","first":"Christian","last":"Nielsen"},"location":{"street":{"number":2454,"name":"Park Alle"},"city":"Pandrup","state":"Midtjylland","country":"Denmark","postcode":81631,"coordinates":{"latitude":"-33.3380","longitude":"-27.8269"},"timezone":{"offset":"-7:00","description":"Mountain Time (US & Canada)"}},"email":"christian.nielsen@example.com","login":{"uuid":"3a33996c-6990-4ce4-bdc8-d765648ad261","username":"smallleopard887","password":"snoopy","salt":"yLMbX4qC","md5":"8964fe8c29cc84db7fd77ffa2094ad4e","sha1":"c5e4d3f64b02e36de24f2c5cb6bcfb426ff48ec0","sha256":"c83ac4d25edad520038c4bef9477f2ae9c5141c4d358bb122c2b0c49fc34eceb"},"dob":{"date":"1969-01-26T00:14:32.197Z","age":53},"registered":{"date":"2009-10-05T01:45:30.682Z","age":13},"phone":"43568131","cell":"07910921","id":{"name":"CPR","value":"260169-2182"},"picture":{"large":"https://randomuser.me/api/portraits/men/35.jpg","medium":"https://randomuser.me/api/portraits/med/men/35.jpg","thumbnail":"https://randomuser.me/api/portraits/thumb/men/35.jpg"},"nat":"DK"}],"info":{"seed":"cdb9d15f5663e555","results":1,"page":1,"version":"1.3"}}
+[2022-03-20 14:12:11,792] {taskinstance.py:1184} INFO - Marking task as SUCCESS. dag_id=user_processing, task_id=extracting_user, execution_date=20200201T000000, start_date=20220320T141210, end_date=20220320T141211
+[2022-03-20 14:12:11,907] {taskinstance.py:1245} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2022-03-20 14:12:11,953] {local_task_job.py:151} INFO - Task exited with return code 0

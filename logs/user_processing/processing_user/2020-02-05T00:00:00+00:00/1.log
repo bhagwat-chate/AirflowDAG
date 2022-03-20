@@ -1,0 +1,22 @@
+[2022-03-20 12:07:54,406] {taskinstance.py:876} INFO - Dependencies all met for <TaskInstance: user_processing.processing_user 2020-02-05T00:00:00+00:00 [queued]>
+[2022-03-20 12:07:54,427] {taskinstance.py:876} INFO - Dependencies all met for <TaskInstance: user_processing.processing_user 2020-02-05T00:00:00+00:00 [queued]>
+[2022-03-20 12:07:54,431] {taskinstance.py:1067} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-20 12:07:54,431] {taskinstance.py:1068} INFO - Starting attempt 1 of 1
+[2022-03-20 12:07:54,431] {taskinstance.py:1069} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-20 12:07:54,483] {taskinstance.py:1087} INFO - Executing <Task(PythonOperator): processing_user> on 2020-02-05T00:00:00+00:00
+[2022-03-20 12:07:54,488] {standard_task_runner.py:52} INFO - Started process 40082 to run task
+[2022-03-20 12:07:54,505] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'user_processing', 'processing_user', '2020-02-05T00:00:00+00:00', '--job-id', '225', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/user_processing.py', '--cfg-path', '/tmp/tmps72ic24a', '--error-file', '/tmp/tmpta_g2apu']
+[2022-03-20 12:07:54,506] {standard_task_runner.py:77} INFO - Job 225: Subtask processing_user
+[2022-03-20 12:07:54,662] {logging_mixin.py:104} INFO - Running <TaskInstance: user_processing.processing_user 2020-02-05T00:00:00+00:00 [running]> on host airflowvm
+[2022-03-20 12:07:54,827] {taskinstance.py:1280} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=user_processing
+AIRFLOW_CTX_TASK_ID=processing_user
+AIRFLOW_CTX_EXECUTION_DATE=2020-02-05T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2020-02-05T00:00:00+00:00
+[2022-03-20 12:07:54,860] {python.py:151} INFO - Done. Returned value was: None
+[2022-03-20 12:07:54,868] {taskinstance.py:1184} INFO - Marking task as SUCCESS. dag_id=user_processing, task_id=processing_user, execution_date=20200205T000000, start_date=20220320T120754, end_date=20220320T120754
+[2022-03-20 12:07:54,949] {taskinstance.py:1245} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2022-03-20 12:07:54,986] {local_task_job.py:151} INFO - Task exited with return code 0

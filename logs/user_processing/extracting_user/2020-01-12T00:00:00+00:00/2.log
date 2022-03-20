@@ -1,0 +1,25 @@
+[2022-03-20 14:03:00,986] {taskinstance.py:876} INFO - Dependencies all met for <TaskInstance: user_processing.extracting_user 2020-01-12T00:00:00+00:00 [queued]>
+[2022-03-20 14:03:01,030] {taskinstance.py:876} INFO - Dependencies all met for <TaskInstance: user_processing.extracting_user 2020-01-12T00:00:00+00:00 [queued]>
+[2022-03-20 14:03:01,030] {taskinstance.py:1067} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-20 14:03:01,031] {taskinstance.py:1068} INFO - Starting attempt 2 of 2
+[2022-03-20 14:03:01,032] {taskinstance.py:1069} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-20 14:03:01,120] {taskinstance.py:1087} INFO - Executing <Task(SimpleHttpOperator): extracting_user> on 2020-01-12T00:00:00+00:00
+[2022-03-20 14:03:01,126] {standard_task_runner.py:52} INFO - Started process 98326 to run task
+[2022-03-20 14:03:01,154] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'user_processing', 'extracting_user', '2020-01-12T00:00:00+00:00', '--job-id', '915', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/user_processing.py', '--cfg-path', '/tmp/tmpdwvrs0gk', '--error-file', '/tmp/tmpmgo2vy0k']
+[2022-03-20 14:03:01,156] {standard_task_runner.py:77} INFO - Job 915: Subtask extracting_user
+[2022-03-20 14:03:01,445] {logging_mixin.py:104} INFO - Running <TaskInstance: user_processing.extracting_user 2020-01-12T00:00:00+00:00 [running]> on host airflowvm
+[2022-03-20 14:03:01,782] {taskinstance.py:1280} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=user_processing
+AIRFLOW_CTX_TASK_ID=extracting_user
+AIRFLOW_CTX_EXECUTION_DATE=2020-01-12T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2020-01-12T00:00:00+00:00
+[2022-03-20 14:03:01,784] {http.py:111} INFO - Calling HTTP method
+[2022-03-20 14:03:01,800] {base.py:69} INFO - Using connection to: id: user_api. Host: https://randomuser.me/, Port: None, Schema: , Login: , Password: ***, extra: {}
+[2022-03-20 14:03:01,808] {http.py:140} INFO - Sending 'GET' to url: https://randomuser.me/api/
+[2022-03-20 14:03:02,484] {http.py:115} INFO - {"results":[{"gender":"female","name":{"title":"Miss","first":"Miroslawa","last":"Theobald"},"location":{"street":{"number":739,"name":"Tannenweg"},"city":"Paderborn","state":"Rheinland-Pfalz","country":"Germany","postcode":75185,"coordinates":{"latitude":"-42.2037","longitude":"163.8750"},"timezone":{"offset":"+4:00","description":"Abu Dhabi, Muscat, Baku, Tbilisi"}},"email":"miroslawa.theobald@example.com","login":{"uuid":"be191eaa-b350-4402-bfdc-83d1fa6ddb45","username":"silverlion324","password":"straight","salt":"owapckm7","md5":"920bcf001b81ed098c9055d8f4428dcb","sha1":"7951e96d497aa636d825ad70e59ed70b277eb54d","sha256":"db2bc93e909f02751eee411bfb3f299371ff96fa6a9917e1b055614cbf624e95"},"dob":{"date":"1990-07-17T19:27:24.634Z","age":32},"registered":{"date":"2003-09-24T10:17:37.796Z","age":19},"phone":"0648-8723964","cell":"0174-1420312","id":{"name":"","value":null},"picture":{"large":"https://randomuser.me/api/portraits/women/96.jpg","medium":"https://randomuser.me/api/portraits/med/women/96.jpg","thumbnail":"https://randomuser.me/api/portraits/thumb/women/96.jpg"},"nat":"DE"}],"info":{"seed":"2f555570d05b83f1","results":1,"page":1,"version":"1.3"}}
+[2022-03-20 14:03:02,747] {taskinstance.py:1184} INFO - Marking task as SUCCESS. dag_id=user_processing, task_id=extracting_user, execution_date=20200112T000000, start_date=20220320T140300, end_date=20220320T140302
+[2022-03-20 14:03:03,136] {taskinstance.py:1245} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2022-03-20 14:03:03,179] {local_task_job.py:151} INFO - Task exited with return code 0

@@ -1,0 +1,25 @@
+[2022-03-20 13:01:14,386] {taskinstance.py:876} INFO - Dependencies all met for <TaskInstance: user_processing.extracting_user 2022-02-03T00:00:00+00:00 [queued]>
+[2022-03-20 13:01:14,426] {taskinstance.py:876} INFO - Dependencies all met for <TaskInstance: user_processing.extracting_user 2022-02-03T00:00:00+00:00 [queued]>
+[2022-03-20 13:01:14,427] {taskinstance.py:1067} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-20 13:01:14,427] {taskinstance.py:1068} INFO - Starting attempt 1 of 1
+[2022-03-20 13:01:14,427] {taskinstance.py:1069} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-20 13:01:14,485] {taskinstance.py:1087} INFO - Executing <Task(SimpleHttpOperator): extracting_user> on 2022-02-03T00:00:00+00:00
+[2022-03-20 13:01:14,489] {standard_task_runner.py:52} INFO - Started process 69743 to run task
+[2022-03-20 13:01:14,505] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'user_processing', 'extracting_user', '2022-02-03T00:00:00+00:00', '--job-id', '564', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/user_processing.py', '--cfg-path', '/tmp/tmpfpoq8fn_', '--error-file', '/tmp/tmpilwcytj_']
+[2022-03-20 13:01:14,506] {standard_task_runner.py:77} INFO - Job 564: Subtask extracting_user
+[2022-03-20 13:01:14,674] {logging_mixin.py:104} INFO - Running <TaskInstance: user_processing.extracting_user 2022-02-03T00:00:00+00:00 [running]> on host airflowvm
+[2022-03-20 13:01:14,962] {taskinstance.py:1280} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=user_processing
+AIRFLOW_CTX_TASK_ID=extracting_user
+AIRFLOW_CTX_EXECUTION_DATE=2022-02-03T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-02-03T00:00:00+00:00
+[2022-03-20 13:01:14,963] {http.py:111} INFO - Calling HTTP method
+[2022-03-20 13:01:14,973] {base.py:69} INFO - Using connection to: id: user_api. Host: https://randomuser.me/, Port: None, Schema: , Login: , Password: ***, extra: {}
+[2022-03-20 13:01:14,977] {http.py:140} INFO - Sending 'GET' to url: https://randomuser.me/api/
+[2022-03-20 13:01:15,412] {http.py:115} INFO - {"results":[{"gender":"female","name":{"title":"Mademoiselle","first":"Lidia","last":"Aubert"},"location":{"street":{"number":4153,"name":"Montée du Chemin-Neuf"},"city":"Lausanne","state":"Genève","country":"Switzerland","postcode":5337,"coordinates":{"latitude":"-55.6293","longitude":"83.1293"},"timezone":{"offset":"-4:00","description":"Atlantic Time (Canada), Caracas, La Paz"}},"email":"lidia.aubert@example.com","login":{"uuid":"80946274-dd6e-4ef6-852e-eaac377b9e34","username":"tinywolf672","password":"br0d3r","salt":"1z639zFt","md5":"3921f170b6cd47a1b53e04fb5828044b","sha1":"33dc31b647ccde71de4d643b70533932d621cde3","sha256":"758d128650d84ae146b63e29d254a1d6c6bd00961395e75c051f479e374ebff8"},"dob":{"date":"1980-02-26T08:40:06.653Z","age":42},"registered":{"date":"2016-05-23T03:18:53.777Z","age":6},"phone":"078 692 36 11","cell":"076 390 81 01","id":{"name":"AVS","value":"756.7421.6132.54"},"picture":{"large":"https://randomuser.me/api/portraits/women/22.jpg","medium":"https://randomuser.me/api/portraits/med/women/22.jpg","thumbnail":"https://randomuser.me/api/portraits/thumb/women/22.jpg"},"nat":"CH"}],"info":{"seed":"a40cbd926b79c283","results":1,"page":1,"version":"1.3"}}
+[2022-03-20 13:01:15,475] {taskinstance.py:1184} INFO - Marking task as SUCCESS. dag_id=user_processing, task_id=extracting_user, execution_date=20220203T000000, start_date=20220320T130114, end_date=20220320T130115
+[2022-03-20 13:01:15,616] {taskinstance.py:1245} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2022-03-20 13:01:15,656] {local_task_job.py:151} INFO - Task exited with return code 0

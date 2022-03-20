@@ -1,0 +1,25 @@
+[2022-03-20 13:20:55,462] {taskinstance.py:876} INFO - Dependencies all met for <TaskInstance: user_processing.extracting_user 2022-03-14T00:00:00+00:00 [queued]>
+[2022-03-20 13:20:55,481] {taskinstance.py:876} INFO - Dependencies all met for <TaskInstance: user_processing.extracting_user 2022-03-14T00:00:00+00:00 [queued]>
+[2022-03-20 13:20:55,481] {taskinstance.py:1067} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-20 13:20:55,482] {taskinstance.py:1068} INFO - Starting attempt 1 of 1
+[2022-03-20 13:20:55,482] {taskinstance.py:1069} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-20 13:20:55,526] {taskinstance.py:1087} INFO - Executing <Task(SimpleHttpOperator): extracting_user> on 2022-03-14T00:00:00+00:00
+[2022-03-20 13:20:55,532] {standard_task_runner.py:52} INFO - Started process 83785 to run task
+[2022-03-20 13:20:55,556] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'user_processing', 'extracting_user', '2022-03-14T00:00:00+00:00', '--job-id', '759', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/user_processing.py', '--cfg-path', '/tmp/tmp25h34wtr', '--error-file', '/tmp/tmpxaw1g7g1']
+[2022-03-20 13:20:55,562] {standard_task_runner.py:77} INFO - Job 759: Subtask extracting_user
+[2022-03-20 13:20:55,850] {logging_mixin.py:104} INFO - Running <TaskInstance: user_processing.extracting_user 2022-03-14T00:00:00+00:00 [running]> on host airflowvm
+[2022-03-20 13:20:56,006] {taskinstance.py:1280} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=user_processing
+AIRFLOW_CTX_TASK_ID=extracting_user
+AIRFLOW_CTX_EXECUTION_DATE=2022-03-14T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-03-14T00:00:00+00:00
+[2022-03-20 13:20:56,007] {http.py:111} INFO - Calling HTTP method
+[2022-03-20 13:20:56,017] {base.py:69} INFO - Using connection to: id: user_api. Host: https://randomuser.me/, Port: None, Schema: , Login: , Password: ***, extra: {}
+[2022-03-20 13:20:56,021] {http.py:140} INFO - Sending 'GET' to url: https://randomuser.me/api/
+[2022-03-20 13:20:56,435] {http.py:115} INFO - {"results":[{"gender":"male","name":{"title":"Mr","first":"Sohan","last":"Bonnet"},"location":{"street":{"number":6442,"name":"Rue Louis-Blanqui"},"city":"Vitry-sur-Seine","state":"Haut-Rhin","country":"France","postcode":60424,"coordinates":{"latitude":"-5.0283","longitude":"-130.9703"},"timezone":{"offset":"-5:00","description":"Eastern Time (US & Canada), Bogota, Lima"}},"email":"sohan.bonnet@example.com","login":{"uuid":"e14aef58-a365-4c7d-ac65-9a0c7a1bdde6","username":"happyfrog653","password":"romeo","salt":"QnywYBZi","md5":"45e92679c50b394f8d86c327350a7451","sha1":"7a080accdaa2cfd15008ac37a6929b266c27b7d6","sha256":"dffa8c10a0cedd2f98c30f4f48d363aa765d0dd6e4271f3b832fd0d8e57cc7b3"},"dob":{"date":"1981-01-09T06:29:01.050Z","age":41},"registered":{"date":"2002-05-19T20:00:11.544Z","age":20},"phone":"03-61-78-89-44","cell":"06-35-58-14-99","id":{"name":"INSEE","value":"1NNaN02258114 35"},"picture":{"large":"https://randomuser.me/api/portraits/men/81.jpg","medium":"https://randomuser.me/api/portraits/med/men/81.jpg","thumbnail":"https://randomuser.me/api/portraits/thumb/men/81.jpg"},"nat":"FR"}],"info":{"seed":"c5923fd5b34582dd","results":1,"page":1,"version":"1.3"}}
+[2022-03-20 13:20:56,496] {taskinstance.py:1184} INFO - Marking task as SUCCESS. dag_id=user_processing, task_id=extracting_user, execution_date=20220314T000000, start_date=20220320T132055, end_date=20220320T132056
+[2022-03-20 13:20:56,610] {taskinstance.py:1245} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2022-03-20 13:20:56,637] {local_task_job.py:151} INFO - Task exited with return code 0

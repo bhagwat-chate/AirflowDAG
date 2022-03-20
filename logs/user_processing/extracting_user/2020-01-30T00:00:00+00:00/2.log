@@ -1,0 +1,25 @@
+[2022-03-20 14:11:53,266] {taskinstance.py:876} INFO - Dependencies all met for <TaskInstance: user_processing.extracting_user 2020-01-30T00:00:00+00:00 [queued]>
+[2022-03-20 14:11:53,295] {taskinstance.py:876} INFO - Dependencies all met for <TaskInstance: user_processing.extracting_user 2020-01-30T00:00:00+00:00 [queued]>
+[2022-03-20 14:11:53,299] {taskinstance.py:1067} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-20 14:11:53,299] {taskinstance.py:1068} INFO - Starting attempt 2 of 2
+[2022-03-20 14:11:53,299] {taskinstance.py:1069} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-20 14:11:53,347] {taskinstance.py:1087} INFO - Executing <Task(SimpleHttpOperator): extracting_user> on 2020-01-30T00:00:00+00:00
+[2022-03-20 14:11:53,352] {standard_task_runner.py:52} INFO - Started process 103312 to run task
+[2022-03-20 14:11:53,384] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'user_processing', 'extracting_user', '2020-01-30T00:00:00+00:00', '--job-id', '983', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/user_processing.py', '--cfg-path', '/tmp/tmp0glxt0hs', '--error-file', '/tmp/tmphnm8mf1d']
+[2022-03-20 14:11:53,395] {standard_task_runner.py:77} INFO - Job 983: Subtask extracting_user
+[2022-03-20 14:11:53,529] {logging_mixin.py:104} INFO - Running <TaskInstance: user_processing.extracting_user 2020-01-30T00:00:00+00:00 [running]> on host airflowvm
+[2022-03-20 14:11:53,686] {taskinstance.py:1280} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=user_processing
+AIRFLOW_CTX_TASK_ID=extracting_user
+AIRFLOW_CTX_EXECUTION_DATE=2020-01-30T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2020-01-30T00:00:00+00:00
+[2022-03-20 14:11:53,687] {http.py:111} INFO - Calling HTTP method
+[2022-03-20 14:11:53,697] {base.py:69} INFO - Using connection to: id: user_api. Host: https://randomuser.me/, Port: None, Schema: , Login: , Password: ***, extra: {}
+[2022-03-20 14:11:53,700] {http.py:140} INFO - Sending 'GET' to url: https://randomuser.me/api/
+[2022-03-20 14:11:54,136] {http.py:115} INFO - {"results":[{"gender":"female","name":{"title":"Ms","first":"Judy","last":"Webb"},"location":{"street":{"number":1470,"name":"Park Road"},"city":"Portmarnock","state":"Galway City","country":"Ireland","postcode":78334,"coordinates":{"latitude":"25.5821","longitude":"41.8423"},"timezone":{"offset":"-6:00","description":"Central Time (US & Canada), Mexico City"}},"email":"judy.webb@example.com","login":{"uuid":"7fb32ac5-ca97-45c5-8b4e-2f70600ffc15","username":"whitedog986","password":"connect","salt":"OLCvVtHR","md5":"088ccee1be719d0f6381acdbafe455ad","sha1":"1bf1aaed6103f2b562bb22d520287fc680852c55","sha256":"1f01ff1aa324ef1c5714e566eac11424ca11a9811bd55e6847f14dd6136f9ce2"},"dob":{"date":"1971-06-06T14:37:24.594Z","age":51},"registered":{"date":"2002-09-15T12:31:32.450Z","age":20},"phone":"011-099-7132","cell":"081-866-2247","id":{"name":"PPS","value":"6340398T"},"picture":{"large":"https://randomuser.me/api/portraits/women/36.jpg","medium":"https://randomuser.me/api/portraits/med/women/36.jpg","thumbnail":"https://randomuser.me/api/portraits/thumb/women/36.jpg"},"nat":"IE"}],"info":{"seed":"06fdbd8c8bb90e0d","results":1,"page":1,"version":"1.3"}}
+[2022-03-20 14:11:54,204] {taskinstance.py:1184} INFO - Marking task as SUCCESS. dag_id=user_processing, task_id=extracting_user, execution_date=20200130T000000, start_date=20220320T141153, end_date=20220320T141154
+[2022-03-20 14:11:54,280] {taskinstance.py:1245} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2022-03-20 14:11:54,301] {local_task_job.py:151} INFO - Task exited with return code 0

@@ -1,0 +1,25 @@
+[2022-03-20 12:53:43,158] {taskinstance.py:876} INFO - Dependencies all met for <TaskInstance: user_processing.extracting_user 2022-01-19T00:00:00+00:00 [queued]>
+[2022-03-20 12:53:43,175] {taskinstance.py:876} INFO - Dependencies all met for <TaskInstance: user_processing.extracting_user 2022-01-19T00:00:00+00:00 [queued]>
+[2022-03-20 12:53:43,175] {taskinstance.py:1067} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-20 12:53:43,175] {taskinstance.py:1068} INFO - Starting attempt 1 of 1
+[2022-03-20 12:53:43,176] {taskinstance.py:1069} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-20 12:53:43,214] {taskinstance.py:1087} INFO - Executing <Task(SimpleHttpOperator): extracting_user> on 2022-01-19T00:00:00+00:00
+[2022-03-20 12:53:43,218] {standard_task_runner.py:52} INFO - Started process 66253 to run task
+[2022-03-20 12:53:43,234] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'user_processing', 'extracting_user', '2022-01-19T00:00:00+00:00', '--job-id', '489', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/user_processing.py', '--cfg-path', '/tmp/tmp46q666he', '--error-file', '/tmp/tmp23q2_s16']
+[2022-03-20 12:53:43,236] {standard_task_runner.py:77} INFO - Job 489: Subtask extracting_user
+[2022-03-20 12:53:43,360] {logging_mixin.py:104} INFO - Running <TaskInstance: user_processing.extracting_user 2022-01-19T00:00:00+00:00 [running]> on host airflowvm
+[2022-03-20 12:53:43,717] {taskinstance.py:1280} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=user_processing
+AIRFLOW_CTX_TASK_ID=extracting_user
+AIRFLOW_CTX_EXECUTION_DATE=2022-01-19T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-01-19T00:00:00+00:00
+[2022-03-20 12:53:43,718] {http.py:111} INFO - Calling HTTP method
+[2022-03-20 12:53:43,728] {base.py:69} INFO - Using connection to: id: user_api. Host: https://randomuser.me/, Port: None, Schema: , Login: , Password: ***, extra: {}
+[2022-03-20 12:53:43,732] {http.py:140} INFO - Sending 'GET' to url: https://randomuser.me/api/
+[2022-03-20 12:53:44,265] {http.py:115} INFO - {"results":[{"gender":"male","name":{"title":"Mr","first":"Cameron","last":"Jones"},"location":{"street":{"number":4235,"name":"Crawford Street"},"city":"New Plymouth","state":"Southland","country":"New Zealand","postcode":87897,"coordinates":{"latitude":"61.7941","longitude":"-174.5491"},"timezone":{"offset":"0:00","description":"Western Europe Time, London, Lisbon, Casablanca"}},"email":"cameron.jones@example.com","login":{"uuid":"357628ad-5d5b-43e9-9577-a7152290a868","username":"lazyladybug690","password":"forgot","salt":"v2vQo3K2","md5":"e825a14c916dd049475cb4c31a46664d","sha1":"a8261b5e36096432ded9a9d7d5b8d6e0957d92c0","sha256":"7daed8322c168255868dde0bc6448974a0ff017877c9bda386ff47b8551564c0"},"dob":{"date":"1968-12-20T12:44:17.859Z","age":54},"registered":{"date":"2003-07-26T11:35:22.151Z","age":19},"phone":"(115)-065-3553","cell":"(757)-017-3272","id":{"name":"","value":null},"picture":{"large":"https://randomuser.me/api/portraits/men/32.jpg","medium":"https://randomuser.me/api/portraits/med/men/32.jpg","thumbnail":"https://randomuser.me/api/portraits/thumb/men/32.jpg"},"nat":"NZ"}],"info":{"seed":"ddb4f94d47a4b49f","results":1,"page":1,"version":"1.3"}}
+[2022-03-20 12:53:44,308] {taskinstance.py:1184} INFO - Marking task as SUCCESS. dag_id=user_processing, task_id=extracting_user, execution_date=20220119T000000, start_date=20220320T125343, end_date=20220320T125344
+[2022-03-20 12:53:44,416] {taskinstance.py:1245} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2022-03-20 12:53:44,449] {local_task_job.py:151} INFO - Task exited with return code 0
