@@ -31,4 +31,11 @@ with DAG('parallel_dag',
         bash_command='sleep 3'
     )
 
-task_1 >> [task_2, task_3] >> task_4
+    task_5 = BashOperator(
+        task_id='task_5',
+        bash_command='printf "%s\n" "$date"'
+    )
+
+
+
+task_1 >> [task_2, task_3, task_5] >> task_4
