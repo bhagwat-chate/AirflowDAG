@@ -1,0 +1,202 @@
+    1  python
+    2  sudo apt update
+    3  sudo apt -y upgrade
+    4  python
+    5  python3
+    6  sudo apt-get install python3-pip==20.2.4
+    7  sudo apt-get install "python3-pip==20.2.4"
+    8  sudo apt-get install python3-pip@20.2.4
+    9  curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+   10  python get-pip.py pip==20.2.4
+   11  python3 get-pip.py pip==20.2.4
+   12  ls
+   13  sudo apt-get install build-essential
+   14  sudo apt-get install -y --no-install-recommends         freetds-bin         krb5-user         ldap-utils         libffi6         libsasl2-2         libsasl2-modules         libssl1.1         locales          lsb-release         sasl2-bin         sqlite3         unixodbc         wget
+   15  sudo apt-get install -y --no-install-recommends freetds-bin krb5-user ldap-utils libffi6 libsasl2-2 libsasl2-modules libssl1.1 locales lsb-release sasl2-bin sqlite3 unixodbc
+   16  sudo apt-get install -y --no-install-recommends freetds-bin krb5-user ldap-utils libsasl2-2 libsasl2-modules libssl1.1 locales lsb-release sasl2-bin sqlite3 unixodbc
+   17  ls
+   18  python3 -m venv sandboz
+   19  rm -rf get-pip.py 
+   20  sudo apt-get install python3-venv
+   21  python3 -m venv sandbox
+   22  source sandbox/bin/activate
+   23  pip3 install apache-airflow==2.0.0b3 --constraint https://raw.githubusercontent.com/apache/airflow/constraints-master/constraints-3.8.txt
+   24  sudo apt-get install python3-dev
+   25  ls
+   26  rm -rf sandboz
+   27  ls
+   28  rm -rf sandbox/
+   29  pip3 install wheel
+   30  pip install wheel
+   31  ls
+   32  sudo apt-get install python3-dev python3-pip python3-venv python3-wheel -y
+   33  sudo apt-get install gcc libpq-dev -y
+   34  pip3 install wheel
+   35  python3 -m venv sandbox
+   36  source sandbox/bin/activate
+   37  ls
+   38  python install wheel
+   39  pip install wheel
+   40  pip3 install wheel
+   41  pip3 install apache-airflow==2.1.0 --constraint https://gist.githubusercontent.com/marclamberti/742efaef5b2d94f44666b0aec020be7c/raw/21c88601337250b6fd93f1adceb55282fb07b7ed/constraint.txt
+   42  ls
+   43  airflow db init
+   44  ls
+   45  cd airflow/
+   46  ls
+   47  airflow webserver
+   48  source sandbox/bin/activate
+   49  airflow scheduler
+   50  source sandbox/bin/activate
+   51  cd airflow/
+   52  ls
+   53  airflow -h
+   54  airflow kubernetics -h
+   55  airflowkubernetes -h
+   56  airflow kubernetes -h
+   57  airflow users -h
+   58  airflow users create -u admin -p admin -f Bhagwat -l Chate -r Admin -e bhagwatchate7@gmail.com
+   59  cd ..
+   60  airflow dags list
+   61  airflow tasks list tutorial
+   62  airflow tasks list tutorial_taskflow_api_etl
+   63  airflow dags trigger -e 2020-01-01 tutorial_taskflow_api_etl
+   64  clear
+   65  cd airflow/
+   66  ls
+   67  clear
+   68  source sandbox/bin/activate
+   69  clear
+   70  cd airflow/
+   71  clear
+   72  pip install 'apache-airflow-providers-http'
+   73  airflow tasks test user_processing is_api_available 2020-01-01
+   74  clear
+   75  airflow tasks test user_processing extracting_user 2020-01-01
+   76  airflow tasks test user_processing processing_user 2020-01-01
+   77  clear
+   78  airflow tasks test user_processing processing_user 2020-01-01
+   79  clear
+   80  airflow tasks test user_processing processing_user 2020-01-01
+   81  clear
+   82  ls /tmp
+   83  cat /tmp/processed_user.csv 
+   84  vi /tmp/processed_user.csv 
+   85  airflow tasks test user_processing storing_user 2020-01-01
+   86  clear
+   87  sqlite3
+   88  clear
+   89  sqlite3 airflow.db 
+   90  airflow tasks test user_processing storing_user 2020-01-01
+   91  clear
+   92  airflow tasks test user_processing storing_user 2020-01-01
+   93  echo -e ".seperator ","\n. import /tmp/processed_user.csv users" | sqlite3 /home/airflow/airflow/airflow.db
+   94  clear
+   95  echo -e ".seperator ","\n. import /tmp/processed_user.csv users" | sqlite3 /home/airflow/airflow/airflow.db
+   96  airflow tasks test user_processing storing_user 2020-01-01
+   97  clear
+   98  sqlite3 airflow.db 
+   99  clear
+  100  sqlite3 airflow.db 
+  101  airflow tasks test user_processing storing_user 2020-01-01
+  102  sqlite3 airflow.db 
+  103  CLEAR
+  104  clear
+  105  airflow tasks test user_processing storing_user 2020-01-01
+  106  clear
+  107  airflow tasks test user_processing storing_user 2020-01-01
+  108  sqlite3 airflow.db 
+  109  airflow tasks test user_processing storing_user 2020-01-01
+  110  sqlite3 airflow.db 
+  111  clear
+  112  airflow tasks test user_processing storing_user 2020-01-01
+  113  sqlite3 airflow.db 
+  114  airflow tasks test user_processing storing_user 2020-01-01
+  115  clear
+  116  cd ..
+  117  git commit -m "Airflow DAG Sequential Executor"
+  118  git remote add origin https://github.com/bhagwat-chate/Airflow.git
+  119  git init
+  120  ls
+  121  cd airflow/
+  122  ls
+  123  git init
+  124  git remote add origin https://github.com/bhagwat-chate/Airflow.git
+  125  git commit -m 'Airflow Sequential Executor'
+  126  git config --global user.email bhagwat.chate25@gmail.com
+  127  git config --global user.name "Bhagwat Chate"
+  128  git commit -m 'Airflow Sequential Executor'
+  129  git branch -M main
+  130  git remote add origin https://github.com/bhagwat-chate/Airflow.git
+  131  git remote add origin https://github.com/bhagwat-chate/Airflow.git -f
+  132  git remote add origin1 https://github.com/bhagwat-chate/Airflow.git -f
+  133  git push -u origin1 main
+  134  git push origin1 main
+  135  git push origin1 main -f
+  136  git push origin1 main -r
+  137  git push origin1 main -d
+  138  git push origin1 main -f
+  139  git push origin1 main -v
+  140  git branch -M main
+  141  git remote -v
+  142  git remote remove origin origin1
+  143  git remote remove origin
+  144  git remote remove origin1
+  145  git remote -v
+  146  ls
+  147  git init
+  148  git commit -m "Airflow Sequential DAG"
+  149  git branch -M main
+  150  git remote add origin https://github.com/bhagwat-chate/AirflowDAG.git
+  151  git push -u origin main
+  152  git push -u origin main -f
+  153  git push -f origin master
+  154  git add .
+  155  git commit -m "Airflow Dag"
+  156  git push -u origin main
+  157  git push -u -f origin main
+  158  git push origin master
+  159  cd ..
+  160  clear
+  161  source sandbox/bin/activate
+  162  airflow scheduler
+  163  cd ..
+  164  source sandbox/bin/activate
+  165  clear
+  166  cd airflow/
+  167  clear
+  168  git status
+  169  git add .
+  170  git commit -m 'Parallel TASK execution in DAG'
+  171  git push origin main
+  172  git push origin master
+  173  clear
+  174  sudo apt update
+  175  sudo apt install postgresql
+  176  sudo -u postgres psql
+  177  pip install 'apache-airflow[postgres]'
+  178  sudo lsof -i tcp:8080
+  179  kill -9 37100
+  180  kill -9 1325
+  181  cd ..
+  182  source sandbox/bin/activate
+  183  cd airflow/
+  184  ls
+  185  airflow scheduler
+  186  clear
+  187  airflow scheduler
+  188  clear
+  189  airflow scheduler
+  190  source sandbox/bin/activate
+  191  cd ..
+  192  source sandbox/bin/activate
+  193  clear
+  194  airflow webserver
+  195  cd ..
+  196  source sandbox/bin/activate
+  197  cd airflow/
+  198  clear
+  199  airflow celery flower
+  200  pip install --upgrade apache-airflow-providers-celery==2.0.0
+  201  airflow celery flower
+  202  history > history.txt
