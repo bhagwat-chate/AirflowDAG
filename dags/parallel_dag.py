@@ -1,9 +1,10 @@
 from airflow import DAG
 from airflow.operators.bash import BashOperator
+from airflow.utils.task_group import TaskGroup
 
 from datetime import datetime
 
-default_args = {'start_date':datetime(2022,3,3)}
+default_args = {'start_date':datetime(2022,3,18)}
 
 with DAG('parallel_dag',
          schedule_interval='@daily',
@@ -16,26 +17,20 @@ with DAG('parallel_dag',
         bash_command='sleep 3'
     )
 
-    task_2 = BashOperator(
-        task_id='task_2',
-        bash_command='sleep 3'
-    )
+    with TaskGroup('processing_tasks') as processing_tasks:
+        task_2 = BashOperator(
+            task_id='task_2',
+            bash_command='sleep 3'
+        )
 
-    task_3 = BashOperator(
-        task_id='task_3',
-        bash_command='sleep 3'
-    )
+        task_3 = BashOperator(
+            task_id='task_3',
+            bash_command='sleep 3'
+        )
 
     task_4 = BashOperator(
         task_id='task_4',
         bash_command='sleep 3'
     )
 
-    task_5 = BashOperator(
-        task_id='task_5',
-        bash_command='printf "%s\n" "$date"'
-    )
-
-
-
-task_1 >> [task_2, task_3, task_5] >> task_4
+task_1 >> processing_tasks >> task_4
